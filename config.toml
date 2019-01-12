@@ -53,24 +53,24 @@ Paginate = 10
         keywords = "blog,developer,personal"
         info = "Software Engineer."
 
-        [languages.en.menu] # It is possible to change the menu too.
+        # [languages.en.menu] # It is possible to change the menu too.
 
-        [[languages.en.menu.main]]
-        name = "Bio"
-        weight = 1
-        url = "/bio/"
+        # [[languages.en.menu.main]]
+        # name = "Bio"
+        # weight = 1
+        # url = "/bio/"
 
-        [[languages.en.menu.main]]
-        name = "Resume"
-        weight = 2
-        url = "/resume/"
+        # [[languages.en.menu.main]]
+        # name = "Resume"
+        # weight = 2
+        # url = "/resume/"
 
-        [[languages.en.menu.main]]
-        name = "Blog"
-        weight = 3
-        url = "/posts/"
+        # [[languages.en.menu.main]]
+        # name = "Blog"
+        # weight = 3
+        # url = "/posts/"
 
-        [[languages.en.menu.main]]
-        name = "Contact me"
-        weight = 5
-        url = "/contact/"
+        # [[languages.en.menu.main]]
+        # name = "Contact me"
+        # weight = 5
+        # url = "/contact/"
