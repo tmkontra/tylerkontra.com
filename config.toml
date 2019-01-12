@@ -1,69 +1,76 @@
-baseURL = "http://tylerkontra.com"
+baseURL = "http://tylerkontra.com/"
 languageCode = "en-us"
-defaultContentLanguage = "en"
-title = "Tyler Kontra"
-theme = "hermit"
-# enableGitInfo = true
-pygmentsCodefences  = true
-pygmentsUseClasses  = true
-# hasCJKLanguage = true  # If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
-rssLimit = 10  # Maximum number of items in the RSS feed.
-copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
-enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
-# googleAnalytics = "UA-123-45"
-# disqusShortname = "yourdiscussshortname"
+title = "Tyler M Kontra"
 
-[author]
-  name = "Tyler M Kontra"
-
-[blackfriday]
-  hrefTargetBlank = true
-
-[taxonomies]
-  tag = "tags"
-  category = ""  # Categories are disabled by default.
+theme = "hugo-coder"
+Paginate = 10
 
 [params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04 -0700"
+    author = "Tyler M Kontra"
+    description = "Big (and small) Data, efficient processes, and bulletproof systems."
+    keywords = "blog,developer,personal"
+    info = "Software Engineer."
+    avatarurl = "headshot.png"
+    footercontent = ""
 
-  customCSS = ["css/custom.css"]
+    dateformat = "January 2, 2006"
 
-  # Metadata mostly used in document's head
-  # description = ""
-  # images = [""]
-  themeColor = "#494f5c"
+    hideCredits = false
+    hideCopyright = false
 
-  homeSubtitle = "Big (and small) Data, efficient processes, and bulletproof systems."
-  footerCopyright = ''
-  # bgImg = ""  # Homepage background-image URL
+    # Git Commit in Footer, uncomment the line below to enable it.
+    # commit = "https://github.com/luizdepra/hugo-coder/tree/"
 
-  # Prefix of link to the git commit detail page. GitInfo must be enabled.
-  # gitUrl = "https://github.com/username/repository/commit/"
+    rtl = false
 
-  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
-  justifyContent = false  # Set "text-align: justify" to .content.
+    # Use inverted colors
+    inverted = false
 
-  # Add custom css
-  # customCSS = ["css/foo.css", "css/bar.css"]
+    # Custom CSS
+    custom_css = []
 
-  # Social Icons
-  # Check https://github.com/Track3/hermit#social-icons for more info.
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/ttymck/"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 4
+    url = "https://www.linkedin.com/in/tylerkontra/"
 
-  [[params.social]]
-    name = "github"
-    url = "https://github.com/ttymck"
 
-[menu]
-  
-  [[menu.main]]
-    name = "Resume"
-    url = "resume/"
-    weight = 30
+[languages]
+    [languages.en]
+        languagename = "English" # The language name to be displayed in the selector.
+        title = "Tyler M Kontra"
 
-  [[menu.main]]
-    name = "Bio"
-    url = "bio/"
-    weight = 20
+        # You can configure the theme parameter for each language.
+        [languages.en.params]
+        author = "Tyler M Kontra"
+        description = "Big (and small) Data, efficient processes, and bulletproof systems."
+        keywords = "blog,developer,personal"
+        info = "Software Engineer."
+
+        [languages.en.menu] # It is possible to change the menu too.
+
+        [[languages.en.menu.main]]
+        name = "Bio"
+        weight = 1
+        url = "/bio/"
+
+        [[languages.en.menu.main]]
+        name = "Resume"
+        weight = 2
+        url = "/resume/"
+
+        [[languages.en.menu.main]]
+        name = "Blog"
+        weight = 3
+        url = "/posts/"
+
+        [[languages.en.menu.main]]
+        name = "Contact me"
+        weight = 5
+        url = "/contact/"
