@@ -1,7 +1,7 @@
 ---
 title: "Throwing Down the Guantlet - Kubernetes The Hard Way - Part 1"
 date: 2019-10-21T15:45:02-07:00
-draft: true
+draft: false
 ---
 
 # Building a Kubernetes Cluster From Scratch
