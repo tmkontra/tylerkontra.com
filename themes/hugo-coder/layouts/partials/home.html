@@ -24,7 +24,7 @@
     {{ end }}
   </div>
   <div class="projects">
-    <h1>Projects</h1>
+    <h1>Recent Projects</h1>
     {{ range .Site.Data.projects }}
     {{ if isset . "link" }}
     <h3><a href="{{ .link }}">{{  .section  }}</a></h3>

@@ -28,6 +28,9 @@ Paginate = 10
 
     # Custom CSS
     custom_css = ["css/custom.css",]
+    
+    favicon_32 = "images/favicon32.png"
+    favicon_16 = "images/favicon16.png"
 
 [[params.social]]
     name = "Github"
