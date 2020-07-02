@@ -1,5 +1,5 @@
 <section class="container centered">
-  <div class="about">
+  <div class="about home-left">
     {{ with .Site.Params.avatarurl }}
       <div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
     {{ end }}
@@ -21,6 +21,19 @@
         {{ end }}
       {{ end }}
     </ul>
+    {{ end }}
+  </div>
+  <div class="projects">
+    <h1>Projects</h1>
+    {{ range .Site.Data.projects }}
+    {{ if isset . "link" }}
+    <h3><a href="{{ .link }}">{{  .section  }}</a></h3>
+    {{ else }}
+    <h3>{{ .section }}</h3>
+    {{ end }}    
+    {{ range .content }}
+    <p>{{ . | safeHTML }}</p>
+    {{ end }}
     {{ end }}
   </div>
 </section>

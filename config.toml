@@ -9,8 +9,8 @@ Paginate = 10
     author = "Tyler M Kontra"
     description = "Big (and small) Data, efficient processes, and bulletproof systems."
     keywords = "blog,developer,personal"
-    info = "Software Engineer."
-    avatarurl = "headshot.png"
+    info = "Software Engineer"
+    avatarurl = "images/headshot-rect.png"
     footercontent = ""
 
     dateformat = "January 2, 2006"
@@ -27,7 +27,7 @@ Paginate = 10
     inverted = false
 
     # Custom CSS
-    custom_css = []
+    custom_css = ["css/custom.css",]
 
 [[params.social]]
     name = "Github"
@@ -51,7 +51,7 @@ Paginate = 10
         author = "Tyler M Kontra"
         description = "Big (and small) Data, efficient processes, and bulletproof systems."
         keywords = "blog,developer,personal"
-        info = "Software Engineer."
+        info = "Software Engineer"
 
         # [languages.en.menu] # It is possible to change the menu too.
 

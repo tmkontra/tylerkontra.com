@@ -55,7 +55,7 @@
 .avatar img{
   width: 20rem;
   height: auto;
-  border-radius: 50%;
+  border-radius: 47%;
   @media only screen and (max-width : 768px) {
     width: 10rem;
   }
@@ -98,7 +98,7 @@
 .centered {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   .about {
     text-align: center;
     h1 {
