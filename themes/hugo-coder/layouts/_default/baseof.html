@@ -55,9 +55,15 @@
     {{ end }}
 
     {{ range .Site.Params.custom_css }}
-      <link rel="stylesheet" href="{{ . | absURL }}">
+      {{$css := resources.Get . }}
+      {{if eq (hugo.Environment) "production" | or (eq $.Site.Params.env "production")}}
+      {{$css = $css | minify | fingerprint}}
+      <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+      {{ else }}
+      <link rel="stylesheet" href="{{ $css | absURL }}">
+      {{ end }}
     {{ end }}
-
+  
     <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_32 | default "/images/favicon-32x32.png" | absURL }}" sizes="32x32">
     <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_16 | default "/images/favicon-16x16.png" | absURL }}" sizes="16x16">
 
@@ -70,7 +76,7 @@
   </head>
 
   <body class="{{ if .Site.Params.rtl }}rtl{{ end }} {{ if .Site.Params.inverted }}inverted{{ end }}">
-    <main class="wrapper">
+    <main class="wrapper {{ .Type }} is-page-{{ .IsPage }}">
       {{ partial "header.html" . }}
 
       <div class="content">

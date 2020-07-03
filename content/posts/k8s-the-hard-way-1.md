@@ -1,5 +1,6 @@
 ---
-title: "Throwing Down the Gauntlet - Kubernetes The Hard Way - Part 1"
+title: "Kubernetes The Hard Way - Part 1"
+subtitle: "Labs 1-3"
 date: 2019-10-21T15:45:02-07:00
 draft: false
 ---
