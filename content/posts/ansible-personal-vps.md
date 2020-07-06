@@ -1,5 +1,6 @@
 ---
 title: "Repeatable VPS Configuration with Ansible"
+description: "Treating your servers like cattle, not pets, with automation"
 date: 2020-07-02T20:28:24-07:00
 draft: false
 ---
