@@ -60,7 +60,7 @@
       {{$css = $css | minify | fingerprint}}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}">
       {{ else }}
-      <link rel="stylesheet" href="{{ $css | absURL }}">
+      <link rel="stylesheet" href="{{ $css.RelPermalink }}">
       {{ end }}
     {{ end }}
   
