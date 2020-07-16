@@ -86,7 +86,9 @@
       {{ partial "footer.html" . }}
     </main>
 
-    {{ template "_internal/google_analytics.html" . }}
+    {{if eq (hugo.Environment) "production" | or (eq $.Site.Params.env "production")}}
+      {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
 
   </body>
 

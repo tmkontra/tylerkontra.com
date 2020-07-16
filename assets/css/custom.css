@@ -100,6 +100,8 @@ h3.subtitle {
     margin-top: 1.2rem;
 }
 
-main.wrapper.posts.is-page-true section.container {
-    max-width: 66%;
+@media only screen and (min-width: 764px) {
+    main.wrapper.posts.is-page-true section.container {
+        max-width: 66%;
+    }
 }

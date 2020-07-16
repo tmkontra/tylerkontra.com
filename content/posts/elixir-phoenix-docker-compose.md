@@ -1,5 +1,5 @@
 +++ 
-draft = true
+draft = false
 date = 2020-07-05T18:36:45-07:00
 title = "Deploying Elixir Phoenix with Docker Compose"
 description = "Using the power of docker-compose to simplify Phoenix deployments"

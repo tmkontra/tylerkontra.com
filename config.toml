@@ -5,6 +5,8 @@ title = "Tyler M Kontra"
 theme = "hugo-coder"
 Paginate = 10
 
+googleAnalytics = "UA-171696779-1"
+
 [params]
     author = "Tyler M Kontra"
     description = "Big (and small) Data, efficient processes, and bulletproof systems."
