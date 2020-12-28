@@ -1,10 +1,17 @@
 ---
-- section: Bullion/Banker (Poker Table Tracking)
-  link: https://github.com/ttymck/bullion
+- section: BadPython.com
+  link: https://badpython.com
+  content: 
+    - A fun way to see and share bad python code; learn to write python by learning what <i>not</i> to do.
+    - Source code can be viewed <a href="https://github.com/ttymck/badpython">here</a>
+    - Built with Django + jQuery
+
+- section: Bullion/Banker
+  link: https://poker.tylerkontra.com
   content:
-    - I wanted a tool to help me keep track of who is owed what during friendly poker matches.
-    - Try it out! <a href="https://poker.tylerkontra.com">poker.tylerkontra.com</a> (click 'Start a Game')
-    - Built with Phoenix (Elixir), pure bootstrap HTML templates
+    - A poker table tracker, to help me keep track of who is owed what during friendly poker matches.
+    - Source code can be viewed <a href="https://github.com/ttymck/bullion">here</a>
+    - Built with Elixir Phoenix, pure bootstrap HTML templates
 
 - section: KeyringNow
   link: https://keyringnow.com
@@ -12,4 +19,4 @@
     - Software License management application. 
     - >- 
       Currently in Beta: <a href="https://app.keyringnow.com">https://app.keyringnow.com</a>
-    - Built with Flask. A bit of React sprinkled around the front-end.
+    - Built with Flask + React

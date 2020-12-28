@@ -68,4 +68,8 @@ Since I use the "Flexible" Cloudflare encryption, I suspect the request nginx re
 
 Is it a security concern? Perhaps, but I'll accept that risk for now. Cloudflare is just so damn convenient.
 
+**UPDATE - July 27:**
+
+I managed to deploy SSL certificates to my nginx server -- I didn't realize Cloudflare let's you generate (non-root) CA Certs for your domains, or I would have done this much sooner! I just uploaded the `.pem` files and updated the nginx config: now all traffic on port 80 is `301` Redirected to `https`. I'm now using `Strict` SSL for my Cloudflare domains.
+
 
