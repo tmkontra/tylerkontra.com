@@ -1,4 +1,4 @@
-<section class="container centered">
+<section class="container centered home-container-grid">
   <div class="about home-left">
     {{ with .Site.Params.avatarurl }}
       <div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
@@ -6,7 +6,7 @@
     <h1>{{ .Site.Params.author }}</h1>
     <h2>{{ .Site.Params.info }}</h2>
     {{ with .Site.Params.social }}
-    <ul>
+    <ul class="social-list">
       {{ range sort .}}
         {{ if .icon }}
           <li>

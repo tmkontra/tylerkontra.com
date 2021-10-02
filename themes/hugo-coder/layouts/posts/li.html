@@ -1,4 +1,6 @@
-<li>
-  <span>{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-  <a href="{{ .URL }}">{{ .Title }}</a>
+<li class="post-list-item">
+  <span class="post-date">
+    {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+  </span>
+  <a href="{{ .URL }}" class="post-link">{{ .Title }}</a>
 </li>

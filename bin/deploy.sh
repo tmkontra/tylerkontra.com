@@ -1,0 +1,1 @@
+rsync -rv public/ tylerkontra.com:~/tylerkontra.com/public/
