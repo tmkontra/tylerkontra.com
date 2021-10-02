@@ -1,22 +1,21 @@
 ---
+- section: StoichkitWeb
+  link: https://stoichkitweb.com
+  content:
+    - A free chemistry toolkit powered by an <a href="https://github.com/ttymck/stoichkit">open source core</a>. 
+    - Built with Rust + React
+
 - section: BadPython.com
   link: https://badpython.com
   content: 
     - A fun way to see and share bad python code; learn to write python by learning what <i>not</i> to do.
-    - Source code can be viewed <a href="https://github.com/ttymck/badpython">here</a>
+    - Source code available <a href="https://github.com/ttymck/badpython">here</a>
     - Built with Django + jQuery
 
-- section: Bullion/Banker
+- section: Banker
   link: https://poker.tylerkontra.com
   content:
     - A poker table tracker, to help me keep track of who is owed what during friendly poker matches.
-    - Source code can be viewed <a href="https://github.com/ttymck/bullion">here</a>
-    - Built with Elixir Phoenix, pure bootstrap HTML templates
+    - Source code available <a href="https://github.com/ttymck/bullion">here</a>
+    - Built with Elixir/Phoenix
 
-- section: KeyringNow
-  link: https://keyringnow.com
-  content:
-    - Software License management application. 
-    - >- 
-      Currently in Beta: <a href="https://app.keyringnow.com">https://app.keyringnow.com</a>
-    - Built with Flask + React
