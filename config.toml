@@ -9,8 +9,8 @@ Paginate = 10
 
 [params]
     author = "Tyler M Kontra"
-    description = "Big (and small) Data, efficient processes, and bulletproof systems."
-    keywords = "blog,developer,personal"
+    description = "Thoughts on software systems development."
+    keywords = "blog,developer,software,software-engineer,programming,python,elixir,backend-dev"
     info = "Software Engineer"
     avatarurl = "images/headshot-rect.png"
     footercontent = ""

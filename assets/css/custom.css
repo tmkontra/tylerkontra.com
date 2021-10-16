@@ -59,6 +59,9 @@ footer.footer {
 }
 
 @media only screen and (max-width : 768px) {
+    section.container.post {
+        padding: 0;
+    }
     div.about.home-left > ul > li > a > i {
         font-size: 2.2rem;
     }
