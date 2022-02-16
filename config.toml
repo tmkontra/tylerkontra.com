@@ -2,10 +2,10 @@ baseURL = "http://tylerkontra.com/"
 languageCode = "en-us"
 title = "Tyler M Kontra"
 
-theme = "hugo-coder"
+theme = ["hugo-coder"]
 Paginate = 10
 
-googleAnalytics = "UA-171696779-1"
+# googleAnalytics = "UA-171696779-1"
 
 [params]
     author = "Tyler M Kontra"
@@ -44,7 +44,6 @@ googleAnalytics = "UA-171696779-1"
     icon = "fab fa-linkedin"
     weight = 4
     url = "https://www.linkedin.com/in/tylerkontra/"
-
 
 [languages]
     [languages.en]
