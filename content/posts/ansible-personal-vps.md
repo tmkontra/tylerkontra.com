@@ -27,7 +27,7 @@ After running `pipenv install ansible`, I have a local ansible workspace ready t
 
 I create my Ansible inventory file, which is laughably small (and redacted):
 
-```
+```yaml
 # ./inventory
 [tylerkontra.com]
 ****.***.***.**
@@ -35,7 +35,7 @@ I create my Ansible inventory file, which is laughably small (and redacted):
 
 Then I start my playbooks directory with a short `ping` playbook.
 
-```
+```yaml
 # ./playbooks/ping.yaml
 ---
 - hosts: all
@@ -49,13 +49,13 @@ Then I start my playbooks directory with a short `ping` playbook.
 
 And then I can run the ping playbook to test connectivity:
 
-```
+```bash
 ansible-playbook ./playbooks/ping.yaml -i inventory
 ```
 
 And see the results!
 
-```
+```sh
 PLAY [all] **********************************************************
 
 TASK [ping all hosts] ***********************************************
@@ -71,7 +71,7 @@ Now that we know we're able to run playbooks against our inventory, let's build 
 
 It'll look something like this:
 
-```
+```yaml
 # ./playbooks/provision.yaml
 ---
 - hosts: all
@@ -153,7 +153,7 @@ It'll look something like this:
 
 Then all you have to do is run:
 
-```
+```bash
 REMOTE_PASS=mypassword IDENTITY=~/.ssh/my_identity_file ansible-playbook ./playbooks/provision.yaml -i inventory
 ```
 

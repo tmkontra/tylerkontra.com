@@ -29,7 +29,7 @@ The one issue I _did_ have was using Cloudflare for HTTPS, instead of Let's Encr
 
 After following the tutorial, I was able to log in just fine: 
 
-```
+```bash
 docker login https://my.registry.com
 ```
 
@@ -37,7 +37,7 @@ No problem.
 
 But when I tried pushing my first image to the registry, I got a cryptic error:
 
-```
+```bash
 $ docker push my.registry.com/my-image
 The push refers to repository [my.registry.com/my-image]
 91a6f9ebe82c: Pushing  3.584kB
@@ -54,13 +54,13 @@ After doing some digging (googling) I found a [stackoverflow answer](https://sta
 
 I changed this line:
 
-```
+```nginx
 proxy_set_header  X-Forwarded-Proto $scheme;
 ```
 
 To this:
 
-```
+```nginx
 proxy_set_header  X-Forwarded-Proto https;
 ```
 

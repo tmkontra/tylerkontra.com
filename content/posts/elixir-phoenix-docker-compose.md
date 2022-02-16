@@ -15,7 +15,7 @@ I'm in the process of improving my personal cloud deployments; as I previously w
 
 Banker is a fairly simple 3 tier web application, a phoenix backend, some static front-end assets, and a PostgreSQL database. Before I started dockerizing it, banker was deployed on a Linux VPS, using the basic Phoenix server command directly on the machine:
 
-```
+```bash
 PORT=4001 MIX_ENV=prod elixir --erl "-detached" -S mix phx.server
 ```
 
@@ -28,7 +28,7 @@ This meant I need to build the app on the server before starting it, using a bas
 
 The Phoenix framework relies on the "Mix" build tool. Mix builds your application using config files, [like this one](https://github.com/ttymck/bullion/blob/0.1.0/bullion/config/prod.secret.exs). But there's a drawback to putting configuration in these `.exs` files: enviroment variables are captured at build time, not run time. So environment variables like:
 
-```
+```elixir
 secret_key_base =
   System.get_env("SECRET_KEY_BASE") ||
     raise """
@@ -67,7 +67,7 @@ I abstracted the `MIX_ENV` and `SECRET_KEY_BASE` environment variables, and para
 I was now able to define a `docker-compose.yaml` that fully specifies the stack:
 
 
-```
+```docker-compose.yaml
 version: "3"
 
 services:
@@ -104,7 +104,7 @@ The only build arg we need to set is `mix_env` because
 
 Now, the great thing about Docker Compose is the ability to set overrides for a `docker-compose.yaml`, which I do in `docker-compose.prod.yaml`:
 
-```
+```docker-compose.yaml
 version: "3"
 
 services:
@@ -146,13 +146,13 @@ The development (base) `docker-compose.yaml` also builds tags web image as `X.Y.
 
 To build a production image, I can now run the following command on any machine (with an environment containing `SECRET_KEY`):
 
-```
+```bash
 docker-compose -f docker-compose.yaml -f docker-compose.prod.yaml build
 ```
 
 Using a docker registry (Docker Hub) is overkill for this project, and would be ill-advised since the image contains secrets (`$SECRET_KEY`). So I choose to upload the image directly to my server:
 
-```
+```bash
 docker save bullion:0.1.0 | bzip2 | pv | ssh tylerkontra.com 'bunzip2 | docker load'
 ```
 
@@ -162,7 +162,7 @@ Now that the production image is available on the server, all that's left to do 
 
 I rsync those up to the server:
 
-```
+```bash
 rsync --files-from=rsync-files.txt . tylerkontra.com:~/bullion/
 ```
 
@@ -170,7 +170,7 @@ rsync --files-from=rsync-files.txt . tylerkontra.com:~/bullion/
 
 Now on the server:
 
-```
+```bash
 tmck@tylerkontra-com ~/bullion » docker-compose -f docker-compose.yaml -f docker-compose.prod.yaml up -d
 ```
 
@@ -180,13 +180,13 @@ But there's still one more thing left to do.
 
 Since the original deployment was using a postgres database installed directly on the machine, but the docker deployment defined it's own data volume, the app data from before the docker deployment would be lost. The quick fix for this is:
 
-```
+```bash
 pg_dump $POSTGRES_DB > banker-$(date +"%y-%m-%d").sql
 ```
 
 And with the dockerized postgres instance exposed available at port 54320:
 
-```
+```bash
 psql -U $POSTGRES_USER -W -h 127.0.0.1 -p 54320 $POSTGRES_DB < banker-YY-MM-DD.sql
 ```
 
