@@ -1,8 +1,8 @@
 ---
-title: "Kubernetes The Hard Way - Part 1"
+title: "[draft] Kubernetes The Hard Way - Part 1"
 subtitle: "Labs 1-3"
 date: 2019-10-21T15:45:02-07:00
-draft: false
+draft: true
 ---
 
 # Building a Kubernetes Cluster From Scratch
