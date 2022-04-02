@@ -2,20 +2,20 @@
 - section: StoichkitWeb
   link: https://stoichkitweb.com
   content:
-    - A free chemistry toolkit powered by an <a href="https://github.com/ttymck/stoichkit">open source core</a>. 
+    - A free chemistry toolkit powered by an <a href="https://github.com/tmkontra/stoichkit">open source core</a>. 
     - Built with Rust + React
 
 - section: BadPython.com
   link: https://badpython.com
   content: 
     - A fun way to see and share bad python code; learn to write python by learning what <i>not</i> to do.
-    - Source code available <a href="https://github.com/ttymck/badpython">here</a>
+    - Source code available <a href="https://github.com/tmkontra/badpython">here</a>
     - Built with Django + jQuery
 
 - section: Banker
   link: https://poker.tylerkontra.com
   content:
     - A poker table tracker, to help me keep track of who is owed what during friendly poker matches.
-    - Source code available <a href="https://github.com/ttymck/bullion">here</a>
+    - Source code available <a href="https://github.com/tmkontra/bullion">here</a>
     - Built with Elixir/Phoenix
 

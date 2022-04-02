@@ -38,7 +38,7 @@ Paginate = 10
     name = "Github"
     icon = "fab fa-github"
     weight = 1
-    url = "https://github.com/ttymck/"
+    url = "https://github.com/tmkontra/"
 [[params.social]]
     name = "LinkedIn"
     icon = "fab fa-linkedin"

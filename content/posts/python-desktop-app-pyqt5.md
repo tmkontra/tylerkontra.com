@@ -108,7 +108,7 @@ The app is in a usable state, it's not perfect, but I am nearing a 0.1 alpha rel
 
 I am currently working on my build and release toolchain, to build installables for mac, linux and windows. For this, I am using [PyInstaller](https://www.pyinstaller.org/). I've got the macOS application building successfully, but have some improvements to make such as logging to a file when no terminal is present, and including a custom application icon.
 
-You can check out PyMyLedger here: [https://github.com/ttymck/pymyledger](https://github.com/ttymck/pymyledger)
+You can check out PyMyLedger here: [https://github.com/tmkontra/pymyledger](https://github.com/tmkontra/pymyledger)
 
 Stay tuned for progress updates!
 

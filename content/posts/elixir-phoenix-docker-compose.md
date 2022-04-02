@@ -19,14 +19,14 @@ Banker is a fairly simple 3 tier web application, a phoenix backend, some static
 PORT=4001 MIX_ENV=prod elixir --erl "-detached" -S mix phx.server
 ```
 
-This meant I need to build the app on the server before starting it, using a bash script that you can [see here](https://github.com/ttymck/bullion/blob/0.1.0/deploy.sh). This was both tedious and uninteresting (in my humble opinion); I love using Docker, I think it's table stakes for any cloud deployments in 2020 -- let's see how it can be used with Phoenix.
+This meant I need to build the app on the server before starting it, using a bash script that you can [see here](https://github.com/tmkontra/bullion/blob/0.1.0/deploy.sh). This was both tedious and uninteresting (in my humble opinion); I love using Docker, I think it's table stakes for any cloud deployments in 2020 -- let's see how it can be used with Phoenix.
 
 
 ### The New Way
 
 #### Buildtime Configuration
 
-The Phoenix framework relies on the "Mix" build tool. Mix builds your application using config files, [like this one](https://github.com/ttymck/bullion/blob/0.1.0/bullion/config/prod.secret.exs). But there's a drawback to putting configuration in these `.exs` files: enviroment variables are captured at build time, not run time. So environment variables like:
+The Phoenix framework relies on the "Mix" build tool. Mix builds your application using config files, [like this one](https://github.com/tmkontra/bullion/blob/0.1.0/bullion/config/prod.secret.exs). But there's a drawback to putting configuration in these `.exs` files: enviroment variables are captured at build time, not run time. So environment variables like:
 
 ```elixir
 secret_key_base =
@@ -51,7 +51,7 @@ So it's clear we will need to be mindful of how we define our build toolchain, a
 
 I started by converting the database URL to runtime evaluation -- it was the only config value I had a simple solution for.
 
-Instead of evaluating `DATABASE_URL` in a `.exs` script, I moved it to the [`Bullion.Repo.init/2`](https://github.com/ttymck/bullion/blob/master/bullion/lib/bullion/repo.ex#L6) method call, which can modify the compiled config.
+Instead of evaluating `DATABASE_URL` in a `.exs` script, I moved it to the [`Bullion.Repo.init/2`](https://github.com/tmkontra/bullion/blob/master/bullion/lib/bullion/repo.ex#L6) method call, which can modify the compiled config.
 
 #### Docker Build
 
@@ -166,7 +166,7 @@ I rsync those up to the server:
 rsync --files-from=rsync-files.txt . tylerkontra.com:~/bullion/
 ```
 
-(`--files-from` is a useful option I learned about today, it let's me send just the three files I need, which are listed in [`rsync-files.txt`](https://github.com/ttymck/bullion/blob/0.1.0/rsync-files.txt))
+(`--files-from` is a useful option I learned about today, it let's me send just the three files I need, which are listed in [`rsync-files.txt`](https://github.com/tmkontra/bullion/blob/0.1.0/rsync-files.txt))
 
 Now on the server:
 
@@ -202,6 +202,6 @@ But there are a few key improvements I will want to make:
 
 2. Spin up a private docker registry on my `tylerkontra.com` server so I can `push` and `pull` the production images, taking advantage of layer caching for faster transfers, while avoiding security concerns of Docker Hub.
 
-Not to mention the numerous [application features and UI improvements](https://github.com/ttymck/bullion/tree/0.1.0#roadmap) I want to make.
+Not to mention the numerous [application features and UI improvements](https://github.com/tmkontra/bullion/tree/0.1.0#roadmap) I want to make.
 
 Thanks for reading. Until next time --

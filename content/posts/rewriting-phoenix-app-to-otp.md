@@ -439,7 +439,7 @@ Bullion is available for all to use!
 
 - Try it out here: https://poker.tylerkontra.com
 - You can also try v1 here: https://poker.tylerkontra.com/legacy
-- It's also open source! https://github.com/ttymck/bullion
+- It's also open source! https://github.com/tmkontra/bullion
 
 ### Acknowledgement
 
