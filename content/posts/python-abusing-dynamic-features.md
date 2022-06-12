@@ -1,9 +1,9 @@
 ---
 draft: true
 date: 2022-06-11T05:15:32-07:00
-title: "compatlib: Going overboard with dynamic Python, and the dangers of sharing your code with the world"
+title: "compatlib or: what not to do in Python"
 description: "Just because we can, doesn't mean we should."
-slug: "compatlib-python-dynamic" 
+slug: "compatlib-python-method-overloading-magic" 
 tags: ["python", "open source"]
 categories: ["programming"]
 ---
@@ -14,9 +14,9 @@ The `asyncio` library in Python is not very old, relative to the language: it wa
 
 So if code runs under Python 3.7+ then it can make use of `run`, otherwise it needs to rely on `asyncio.get_event_loop().run_until_complete`.
 
-This isn't a problem if you are writing an application, since you'll probabl run that application under a well-known version of Python -- the version you choose.
+This isn't a problem if you are writing an application, since you'll probably run that application under a well-known version of Python -- the version you choose.
 
-But if you are writing a library, you would need to support Python <=3.6 and Python3.7+. The code might look something like this:
+But if you are writing a library, you might need to support Python <=3.6 and Python3.7+. The code might look something like this:
 
 ```py
 # code courtesy of @mark-nick-o on mypy issue #12331: https://github.com/python/mypy/issues/12331
@@ -60,14 +60,17 @@ This means that invoking `my_module.main()` on a Python 3.6 interpreter will ret
 To my eyes, the `compatlib` implementation is much more readable: instead of grokking `sys.version_info` checks, you can clearly see `(major, minor)` version tuples and the associated code. But that doesn't make the `compatlib` code better than the first example -- and it definitely doesn't make `compatlib` a _good idea_.
 
 
-It wasn't until I shared `compatlib` with the world that I realized how dangerous it is. 
+It wasn't until I shared `compatlib` with the world that I realized how dangerous it is.
 
-I understood `compatlib` to be a fun novelty. I decided to share it with the Hacker News community, to see what kind of reaction it got. I could not have been more surprised.
-
-The conversation that ensued was far more incisive and interesting than I could have imagined. Folks were discussing the merits and prevalence of librarires supporting multiple Python versions, the quickest and easiest ways to reproduce certain subsets of `compatlib` features, the parallels with `awk`'s `BEGIN` blocks, the absence of macros in Python. 
-
+The conversation that formed around compatlib was far more incisive and interesting than I could have imagined. Folks were discussing the merits and prevalence of librarires supporting multiple Python versions, the quickest and easiest ways to reproduce certain subsets of `compatlib` features, the parallels with `awk`'s `BEGIN` blocks, the absence of macros in Python.
 
 And one comment stood out to me -- far beyond the rest, because it succinctly captured my thoughts on `compatlib`: don't use this. 
+
+`compatlib` makes code more "magical": by hiding the machinery of "interpreter version checks" behind `compat.after`, you introduce a lot of unecessary indirection to your code. And, if `compatlib` breaks (which it very well could, because it hasn't been thoroughly tested), you now have to debug a library, instead of debugging a few if-else checks.
+
+In fact, it was a recent post from David Bieber in which David shares ["magic functions"](https://davidbieber.com/snippets/2021-02-17-python-magic-functions/), sometimes known as implicit arguments. David is very direct:
+
+> The short answer is that you should never use magic functions.
 
 It's amazing to see what the Python community accepts and rejects; what goes into and out of vogue. Hopefully, `compatlib` stays out of vogue, in favor of simpler, less magical alternatives.
 
