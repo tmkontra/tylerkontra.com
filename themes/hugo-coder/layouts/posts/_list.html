@@ -5,11 +5,11 @@
   <section class="container list">
     <h1 class="title">{{ .Title }}</h1>
 
-    <table class="posts-table">
+    <ul>
       {{- range .Paginator.Pages -}}
-        {{- .Render "tr" -}}
+        {{- .Render "li" -}}
       {{- end -}}
-    </table>
+    </ul>
 
     {{ partial "pagination.html" . }}
   </section>

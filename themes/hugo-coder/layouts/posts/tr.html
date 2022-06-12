@@ -1,0 +1,8 @@
+<tr class="post-list-item">
+    <td class="post-date" style="vertical-align: top;">
+        {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+    </td>
+    <td>
+    <a href="{{ .URL }}" class="post-link">{{ .Title }}</a>
+    </td>
+</tr>
