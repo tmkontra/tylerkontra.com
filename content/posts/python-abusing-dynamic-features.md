@@ -1,6 +1,6 @@
 ---
-draft: true
-date: 2022-06-11T05:15:32-07:00
+draft: false
+date: 2022-06-12T00:00:00-07:00
 title: "compatlib or: what not to do in Python"
 description: "Just because we can, doesn't mean we should."
 slug: "compatlib-python-method-overloading-magic" 
