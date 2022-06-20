@@ -22,7 +22,7 @@ To which I'd answer:
 1. Scala supports [infix notation](https://docs.scala-lang.org/style/method-invocation.html)
 2. Not even close.
 
-### Packing a Punchs
+### Packing a Punch
 
 There's a multitude of reasons why `should be` is far superior to `==`. Right now I'll hit the highlights and get on to teaching you to write you own, similar, dsl.
 

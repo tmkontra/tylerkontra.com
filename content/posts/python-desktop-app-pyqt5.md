@@ -8,7 +8,7 @@ tags = []
 categories = []
 +++
 
-### The Horse I Rode In On
+### Getting Outside My Comfort Zone
 
 It'd be pretty challenging to peg me as anything other than a web developer at this point. I've built and shipped server-side applications that are precipitated by the web. It's in vogue. But there's a whole world of software development that doesn't even need the web: desktop applications.
 

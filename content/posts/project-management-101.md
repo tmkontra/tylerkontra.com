@@ -2,7 +2,7 @@
 title: "Project Management 101 for Software Engineers"
 subtitle: "Tips on being a better Tech Lead"
 date: 2020-06-27T17:37:16-07:00
-draft: false
+draft: true
 ---
 
 So you're leading a software development project for the first time, or you're interested in improving your current project management framework? Below are just of few of my recommended things to focus on.
