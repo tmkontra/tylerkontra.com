@@ -24,7 +24,14 @@
     {{ end }}
   </div>
   <div class="projects">
-    <h1>Recent Projects</h1>
+    <h1>Recent Posts</h1>
+    {{ range ( where .Site.RegularPages "Type" "posts" | first 3 ) }}
+    <p>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <p>
+    {{end}}
+    <a href="/posts/" style="color: black">See All Posts</a>
+    <h1 style="padding-top: 20px">Open Source Projects</h1>
     {{ range .Site.Data.projects }}
     {{ if isset . "link" }}
     <h3><a href="{{ .link }}">{{  .section  }}</a></h3>
