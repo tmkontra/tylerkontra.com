@@ -3,6 +3,6 @@
         {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
     </td>
     <td>
-    <a href="{{ .URL }}" class="post-link">{{ .Title }}</a>
+    <a href="{{ .Permalink }}" class="post-link">{{ .Title }}</a>
     </td>
 </tr>

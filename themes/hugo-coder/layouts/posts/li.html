@@ -3,6 +3,6 @@
     <span class="post-date" style="vertical-align: top;">
       {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
     </span>
-    <a href="{{ .URL }}" class="post-link" style="display: inline-block; max-width: fio;">{{ .Title }}</a>
+    <a href="{{ .Permalink }}" class="post-link" style="display: inline-block; max-width: fio;">{{ .Title }}</a>
   </div>
 </li>
